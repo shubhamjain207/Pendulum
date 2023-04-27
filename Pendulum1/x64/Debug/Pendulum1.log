@@ -1,0 +1,20 @@
+﻿  Source.cpp
+D:\SFML\Pendulum1\Pendulum1\Source.cpp(36,88): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+D:\SFML\Pendulum1\Pendulum1\Source.cpp(36,63): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+  Pendulum1.vcxproj -> D:\SFML\Pendulum1\x64\Debug\Pendulum1.exe
