@@ -15,6 +15,8 @@ int main()
 
     float posX=500, posY=250;
 
+    float val=0.1f;
+
     int points[100][2];
 
     line[0][0].position = sf::Vector2f(posX-100, posY);
@@ -22,6 +24,7 @@ int main()
     line[0][1].position = sf::Vector2f(posX-100-200, posY);
     line[0][1].color = sf::Color::Red;
 
+    float wall = 5.f;
 
     shape[0].setOutlineColor(sf::Color::Red);
     shape[0].setOutlineThickness(2);
@@ -30,7 +33,7 @@ int main()
     shape[0].setPosition(line[0][1].position.x - 50, line[0][1].position.y - 50);
 
 
-    for (int i = 1; i < 5; i++) {
+    for (int i = 1; i < 6; i++) {
         line[i][0].position = sf::Vector2f(posX, posY);
         line[i][0].color = sf::Color::Red;
         line[i][1].position = sf::Vector2f(posX, posY + 200);
@@ -101,17 +104,62 @@ int main()
        
         if (flag1) {
         
-            line[0][1].position = sf::Vector2f(400 + sin(endPoint) * 200, 250 + cos(endPoint) * 200);
-            endPoint += 0.1f;
+            line[0][1].position = sf::Vector2f(400 + sin(endPoint) * 200, 300 + cos(endPoint) * 200);
+            endPoint += val;
             shape[0].setPosition(line[0][1].position.x - 50, line[0][1].position.y - 50);
         
         }
+
+        else {
+
+
+
+
+
+            line[5][1].position = sf::Vector2f(900 + sin(endPoint) * 200, 300 + cos(endPoint) * 200);
+            endPoint += val;
+            shape[5].setPosition(line[5][1].position.x - 50, line[5][1].position.y - 50);
+
+            if (shape[5].getPosition().y <= 200) {
+                val = -0.1f;
+
+            }
+
+
+        }
+
         
 
-        if (shape[0].getPosition().x >= 500  && shape[0].getPosition().y >= 250 ) {
-            std::cout << "Hello" << std::endl;
-            
+       //std::cout << shape[0].getPosition().x << std::endl << shape[1].getPosition().x << std::endl;
+        
+
+        if (shape[5].getPosition().x - 160  <= shape[4].getPosition().x) {
+            std::cout << "24" << std::endl;
+
+            flag1 = true;
+           
+
+
+
+
+
+
         }
+
+        
+       
+
+
+        if (shape[0].getPosition().x + 120 + wall >= shape[1].getPosition().x) {
+                std::cout << "Helo" << std::endl;
+                wall = 0.0f;
+                flag1 = false;
+                
+
+            }
+
+        
+
 
         for (int i = 0; i < 6; i ++) {
             
