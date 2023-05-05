@@ -19,4 +19,5 @@ D:\SFML\Pendulum1\Pendulum1\Source.cpp(54,63): warning C4244: 'argument': conver
           ]
 D:\SFML\Pendulum1\Pendulum1\Source.cpp(57,27): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
 D:\SFML\Pendulum1\Pendulum1\Source.cpp(58,27): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\SFML\Pendulum1\Pendulum1\Source.cpp(107,26): warning C4305: '=': truncation from 'double' to 'float'
   Pendulum1.vcxproj -> D:\SFML\Pendulum1\x64\Debug\Pendulum1.exe

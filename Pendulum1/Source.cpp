@@ -10,7 +10,7 @@ int main()
     
 
     sf::Vector2i mousePos;
-    bool flag = true;
+   
     bool flag1 = true;
 
     float posX=500, posY=250;
@@ -27,7 +27,7 @@ int main()
     float wall = 5.f;
 
     shape[0].setOutlineColor(sf::Color::Red);
-    shape[0].setOutlineThickness(2);
+    shape[0].setOutlineThickness(4);
     shape[0].setFillColor(sf::Color::Black);
     shape[0].setRadius(50.f);
     shape[0].setPosition(line[0][1].position.x - 50, line[0][1].position.y - 50);
@@ -41,7 +41,7 @@ int main()
         
 
         shape[i].setOutlineColor(sf::Color::Red);
-        shape[i].setOutlineThickness(2);
+        shape[i].setOutlineThickness(4);
         shape[i].setFillColor(sf::Color::Black);
         shape[i].setRadius(50.f);
         shape[i].setPosition(posX - 50,posY + 200);
@@ -69,97 +69,67 @@ int main()
                 window.close();
         }
 
-       /* mousePos = sf::Mouse::getPosition(window);
-
-        if (flag) {
-           
-
-            line[0][1].position = sf::Vector2f(mousePos);
-            shape[0].setPosition(mousePos.x - 50.f, mousePos.y - 50.f);
-        
-        }*/
-
-  
-        
-
-        //if (sqrt(pow((line[0][1].position.x - line[0][0].position.x),2) + pow((line[0][1].position.y - line[0][0].position.y), 2)) > 400.f) {
-        //   
-        //    line[0][1].position.x -= 1.f;
-        //    line[0][1].position.y -= 1.f;
-        //    
-        //    std::cout << line[0][1].position.x << std::endl;
-        //    std::cout << line[0][1].position.y << std::endl;
-
-        //    flag = false;
-        //}
-        //else {
-        //    flag = true;
-        //}
-
+      
         window.clear();
 
-        /*or (int i = 0; i < 100; i++) {*/
-            
-        //}
        
-        if (flag1) {
+       
+        if (endPoint < 182.3) {
         
             line[0][1].position = sf::Vector2f(400 + sin(endPoint) * 200, 300 + cos(endPoint) * 200);
+            
             endPoint += val;
+           
+            
+            if (endPoint <= 181) {
+                val = 0.1f;
+                
+            }
+           
+            std::cout << "left- " << endPoint << std::endl;
+            
+
             shape[0].setPosition(line[0][1].position.x - 50, line[0][1].position.y - 50);
         
         }
 
-        else {
+       
 
+        else{
 
-
-
+            
 
             line[5][1].position = sf::Vector2f(900 + sin(endPoint) * 200, 300 + cos(endPoint) * 200);
             endPoint += val;
             shape[5].setPosition(line[5][1].position.x - 50, line[5][1].position.y - 50);
 
-            if (shape[5].getPosition().y <= 200) {
-                val = -0.1f;
+            if (shape[5].getPosition().y <= 230) {
+                val = -.1;
 
             }
 
+            std::cout << "left- " << endPoint << std::endl;
+            
 
         }
 
-        
-
-       //std::cout << shape[0].getPosition().x << std::endl << shape[1].getPosition().x << std::endl;
-        
-
-        if (shape[5].getPosition().x - 160  <= shape[4].getPosition().x) {
-            std::cout << "24" << std::endl;
-
-            flag1 = true;
-           
-
-
-
-
-
-
-        }
-
-        
        
 
+      /* 
+       if (shape[5].getPosition().x - 160  <= shape[4].getPosition().x) {
+            std::cout << "24" << std::endl;
+            flag1 = true;
+            
 
-        if (shape[0].getPosition().x + 120 + wall >= shape[1].getPosition().x) {
-                std::cout << "Helo" << std::endl;
-                wall = 0.0f;
+        }
+
+        if (shape[0].getPosition().x + 120 >= shape[1].getPosition().x) {
+                
+                line[0][1].position = sf::Vector2f(line[0][1].position.x - 1.f, line[0][1].position.y);
                 flag1 = false;
                 
 
-            }
-
-        
-
+        }*/
 
         for (int i = 0; i < 6; i ++) {
             
@@ -173,7 +143,7 @@ int main()
        
         window.display();
 
-        window.setFramerateLimit(20);
+        window.setFramerateLimit(40);
     }
 
     return 0;
