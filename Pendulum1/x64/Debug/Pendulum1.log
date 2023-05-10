@@ -1,5 +1,5 @@
 ﻿  Source.cpp
-D:\SFML\Pendulum1\Pendulum1\Source.cpp(54,88): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+D:\SFML\Pendulum1\Pendulum1\Source.cpp(57,88): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
           with
           [
               T=float
@@ -8,7 +8,7 @@ D:\SFML\Pendulum1\Pendulum1\Source.cpp(54,88): warning C4244: 'argument': conver
           [
               T=int
           ]
-D:\SFML\Pendulum1\Pendulum1\Source.cpp(54,63): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+D:\SFML\Pendulum1\Pendulum1\Source.cpp(57,63): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
           with
           [
               T=float
@@ -17,7 +17,6 @@ D:\SFML\Pendulum1\Pendulum1\Source.cpp(54,63): warning C4244: 'argument': conver
           [
               T=int
           ]
-D:\SFML\Pendulum1\Pendulum1\Source.cpp(57,27): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\SFML\Pendulum1\Pendulum1\Source.cpp(58,27): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
-D:\SFML\Pendulum1\Pendulum1\Source.cpp(107,26): warning C4305: '=': truncation from 'double' to 'float'
+D:\SFML\Pendulum1\Pendulum1\Source.cpp(60,27): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
+D:\SFML\Pendulum1\Pendulum1\Source.cpp(61,27): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
   Pendulum1.vcxproj -> D:\SFML\Pendulum1\x64\Debug\Pendulum1.exe

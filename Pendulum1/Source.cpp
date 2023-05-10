@@ -10,12 +10,15 @@ int main()
     
 
     sf::Vector2i mousePos;
-   
+    float leftLimit = 180.5f;
+    float rightLimit = 184;
+
     bool flag1 = true;
+    bool flag2 = false;
 
     float posX=500, posY=250;
 
-    float val=0.1f;
+    float val=0.04f;
 
     int points[100][2];
 
@@ -74,22 +77,36 @@ int main()
 
        
        
-        if (endPoint < 182.3) {
+        if (endPoint < leftLimit) { /// Can make changes here
         
+            if (endPoint >= 182.1 && endPoint <182.2) {
+                
+                leftLimit += .09f;
+            }
+
             line[0][1].position = sf::Vector2f(400 + sin(endPoint) * 200, 300 + cos(endPoint) * 200);
             
             endPoint += val;
            
             
-            if (endPoint <= 181) {
-                val = 0.1f;
+          /*  if (endPoint < leftLimit) {
                 
-            }
+              
+                   
+                val = 0.04f;
+             
+                
+            }*/
+            
            
-            std::cout << "left- " << endPoint << std::endl;
+           
             
 
             shape[0].setPosition(line[0][1].position.x - 50, line[0][1].position.y - 50);
+
+           
+           
+            
         
         }
 
@@ -97,15 +114,20 @@ int main()
 
         else{
 
-            
+            if (endPoint >= 183.4 && endPoint < 183.5) {
 
+                rightLimit -= .09f;
+            }
+            
+            
             line[5][1].position = sf::Vector2f(900 + sin(endPoint) * 200, 300 + cos(endPoint) * 200);
             endPoint += val;
             shape[5].setPosition(line[5][1].position.x - 50, line[5][1].position.y - 50);
 
-            if (shape[5].getPosition().y <= 230) {
-                val = -.1;
-
+            if (endPoint > rightLimit) {
+                
+                val = -.04f;
+               
             }
 
             std::cout << "left- " << endPoint << std::endl;
@@ -143,7 +165,7 @@ int main()
        
         window.display();
 
-        window.setFramerateLimit(40);
+        window.setFramerateLimit(60);
     }
 
     return 0;
